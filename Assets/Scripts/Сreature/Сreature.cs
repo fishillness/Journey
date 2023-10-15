@@ -24,7 +24,7 @@ namespace Journey
         }
 
 
-        public void SetDirection(float horizontal, float vertical)
+        public virtual void SetDirection(float horizontal, float vertical)
         {
             direction = new Vector2(horizontal, vertical);
             direction = Vector2.ClampMagnitude(direction, 1);

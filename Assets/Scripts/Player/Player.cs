@@ -12,6 +12,8 @@ namespace Journey
 
         public bool CanFire => refireTimer <= 0;
 
+        protected Vector2 lastDirection;
+
         protected override void Start()
         {
             base.Start();
@@ -34,11 +36,19 @@ namespace Journey
 
             Projectile projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
             projectile.transform.position = transform.position;
-            projectile.transform.up = direction;
+            projectile.transform.up = lastDirection;
             projectile.SetParent(parent);
 
             refireTimer = refireTime;
 
+        }
+
+        public override void SetDirection(float horizontal, float vertical)
+        {
+            if (new Vector2(horizontal, vertical).magnitude > 0.1f)
+                lastDirection = direction;
+
+            base.SetDirection(horizontal, vertical);
         }
     }
 }
