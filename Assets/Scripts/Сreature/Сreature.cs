@@ -2,14 +2,15 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class Ñreature : MonoBehaviour
+    public class Ñreature : Destructible
     {
-        [SerializeField] private float speed = 5f;
+        [SerializeField] private float speed = 2f;
 
         private new Rigidbody2D rigidbody;
         private AnimatorController animatorController;
-        private Vector2 direction;
         private Vector2 nextPosition;
+
+        protected Vector2 direction;
 
         private void Awake()
         {
@@ -35,7 +36,5 @@ namespace Journey
             animatorController.SetDirection(direction);
             rigidbody.MovePosition(nextPosition);
         }
-
-
     }
 }

@@ -4,7 +4,7 @@ namespace Journey
 {
     public class InputControll : MonoBehaviour
     {
-        [SerializeField] private Ñreature ñreature;
+        [SerializeField] private Player player;
 
         private float verticalAxis;
         private float horizontalAxis;
@@ -13,6 +13,7 @@ namespace Journey
         {
             UpdateAxis();
             UpdateDirection();
+            CheckKeyDowm();
         }
 
         private void UpdateAxis()
@@ -23,8 +24,17 @@ namespace Journey
 
         private void UpdateDirection()
         {
-            ñreature.SetDirection(horizontalAxis, verticalAxis);
+            player.SetDirection(horizontalAxis, verticalAxis);
         }
+
+        private void CheckKeyDowm()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) == true)
+            {
+                player.Fire();
+            }
+        }
+
     }
 }
 
