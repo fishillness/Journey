@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class Player : Ñreature
+    public class Player : Creature
     {
         [SerializeField] private GameObject projectilePrefab;
         [SerializeField] private float refireTime;

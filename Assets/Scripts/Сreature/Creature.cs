@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class Ñreature : Destructible
+    public class Creature : Destructible
     {
         [SerializeField] private float speed = 2f;
 
