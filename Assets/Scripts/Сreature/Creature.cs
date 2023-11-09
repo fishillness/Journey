@@ -21,6 +21,7 @@ namespace Journey
         private void FixedUpdate()
         {
             Move();
+            UpdateAnimator(direction);
         }
 
 
@@ -30,11 +31,16 @@ namespace Journey
             direction = Vector2.ClampMagnitude(direction, 1);
         }
 
-        public void Move()
+        protected virtual void Move()
         {
             nextPosition = rigidbody.position + direction * speed * Time.fixedDeltaTime;
-            animatorController.SetDirection(direction);
+            //animatorController.SetDirection(direction);
             rigidbody.MovePosition(nextPosition);
+        }
+
+        protected void UpdateAnimator(Vector2 direction)
+        {
+            animatorController.SetDirection(direction);
         }
     }
 }

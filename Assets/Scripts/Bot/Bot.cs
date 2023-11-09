@@ -3,11 +3,11 @@ using UnityEngine.AI;
 
 namespace Journey
 {
-    public class Bot : MonoBehaviour
+    public class Bot : Creature
     {
-
         [SerializeField] private Player player;
         [SerializeField] private Transform[] patrolPoint;
+        [SerializeField] private float visibilityDistance;
 
         private NavMeshAgent agent;
         private int currentPatrolPointIndex;
@@ -15,8 +15,11 @@ namespace Journey
 
         private float deviationDistanceToPoint = 0.1f;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
+            player = GameObject.FindObjectOfType<Player>();
+
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
             agent.updateUpAxis = false;
@@ -24,12 +27,21 @@ namespace Journey
             agent.SetDestination(patrolPoint[currentPatrolPointIndex].position);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            Patrolling();
+            Move();
+
+            UpdateAnimator(CalculateDirection());
         }
 
-        private void Patrolling()
+        /*
+        private void ChooseBehaviour()
+        {
+
+        }
+        */
+
+        protected override void Move() //Patrolling
         {
             if (!agent.pathPending && agent.remainingDistance < deviationDistanceToPoint)
             {
@@ -41,5 +53,19 @@ namespace Journey
                 agent.SetDestination(patrolPoint[currentPatrolPointIndex].position);
             }
         }
+
+
+
+        private Vector2 CalculateDirection()
+        {
+            Vector2 direction = new Vector2(patrolPoint[currentPatrolPointIndex].position.x - transform.position.x,
+                patrolPoint[currentPatrolPointIndex].position.y - transform.position.y);
+            direction = Vector2.ClampMagnitude(direction, 1);
+
+            return direction;
+            //animatorController.SetDirection(direction);
+        }
+
+
     }
 }
