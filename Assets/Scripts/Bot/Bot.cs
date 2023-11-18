@@ -7,11 +7,13 @@ namespace Journey
     {
         [SerializeField] private Player player;
         [SerializeField] private Transform[] patrolPoint;
-        [SerializeField] private float visibilityDistance;
+        //[SerializeField] private float visibilityDistance = 1.5f;
 
         private NavMeshAgent agent;
+        private BotTriggerCollider triggerCollider;
         private int currentPatrolPointIndex;
-        private bool isFollowingPlayer = false;
+        [Header("DEBUG")]
+        [SerializeField] private bool isFollowingPlayer = false;
 
         private float deviationDistanceToPoint = 0.1f;
 
@@ -19,6 +21,7 @@ namespace Journey
         {
             base.Start();
             player = GameObject.FindObjectOfType<Player>();
+            triggerCollider = GetComponentInChildren<BotTriggerCollider>();
 
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
@@ -29,9 +32,14 @@ namespace Journey
 
         private void FixedUpdate()
         {
-            Move();
+            Move(); //Patrolling
 
-            UpdateAnimator(CalculateDirection());
+            CalculateDirection();
+            UpdateAnimator(direction);
+
+            MoveTriggerCollider();
+
+            TrySeePlayer();
         }
 
         /*
@@ -54,18 +62,35 @@ namespace Journey
             }
         }
 
-
-
-        private Vector2 CalculateDirection()
+        private void CalculateDirection()
         {
-            Vector2 direction = new Vector2(patrolPoint[currentPatrolPointIndex].position.x - transform.position.x,
+            direction = new Vector2(patrolPoint[currentPatrolPointIndex].position.x - transform.position.x,
                 patrolPoint[currentPatrolPointIndex].position.y - transform.position.y);
             direction = Vector2.ClampMagnitude(direction, 1);
-
-            return direction;
-            //animatorController.SetDirection(direction);
         }
 
+        private void MoveTriggerCollider()
+        {
+            triggerCollider.Move(transform.position, direction);
+        }
 
+        private void TrySeePlayer()
+        {
+            if (!triggerCollider.IsPlayerEnter) return;
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position);
+
+            if (hit.collider)
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    isFollowingPlayer = true;
+                }
+                else
+                {
+                    isFollowingPlayer = false;
+                }
+            }
+        }
     }
 }
