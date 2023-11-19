@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 413202223}
   - component: {fileID: 413202225}
   - component: {fileID: 413202226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.91, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1023905422}
@@ -573,7 +573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015d34efaff9b14c978f0543a8bc7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   visibilityDistance: 0.5
   isPlayerEnter: 0
 --- !u!114 &413202226
@@ -2685,6 +2684,7 @@ MonoBehaviour:
   - {fileID: 922481977}
   - {fileID: 1289064400}
   - {fileID: 853417572}
+  timeWhenIsStillVisible: 5
   isFollowingPlayer: 0
 --- !u!4 &1023905422
 Transform:

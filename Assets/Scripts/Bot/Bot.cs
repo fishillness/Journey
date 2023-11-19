@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ namespace Journey
     {
         [SerializeField] private Player player;
         [SerializeField] private Transform[] patrolPoint;
+        [SerializeField] private float timeWhenIsStillVisible = 5;
         //[SerializeField] private float visibilityDistance = 1.5f;
 
         private NavMeshAgent agent;
@@ -30,25 +32,26 @@ namespace Journey
             agent.SetDestination(patrolPoint[currentPatrolPointIndex].position);
         }
 
-        private void FixedUpdate()
+        private new void FixedUpdate()
         {
-            Move(); //Patrolling
+            ChooseBehaviour();
+        }
+
+        private void ChooseBehaviour()
+        {
+            TrySeePlayer();
+
+            if (!isFollowingPlayer)
+                Move(); //Patrolling
+
+            if (isFollowingPlayer)
+                FollowingPlayer();
 
             CalculateDirection();
             UpdateAnimator(direction);
-
             MoveTriggerCollider();
-
-            TrySeePlayer();
         }
-
-        /*
-        private void ChooseBehaviour()
-        {
-
-        }
-        */
-
+        
         protected override void Move() //Patrolling
         {
             if (!agent.pathPending && agent.remainingDistance < deviationDistanceToPoint)
@@ -64,8 +67,17 @@ namespace Journey
 
         private void CalculateDirection()
         {
-            direction = new Vector2(patrolPoint[currentPatrolPointIndex].position.x - transform.position.x,
-                patrolPoint[currentPatrolPointIndex].position.y - transform.position.y);
+            if (!isFollowingPlayer)
+            {
+                direction = new Vector2(patrolPoint[currentPatrolPointIndex].position.x - transform.position.x,
+                    patrolPoint[currentPatrolPointIndex].position.y - transform.position.y);
+            }
+            else
+            {
+                direction = new Vector2(player.transform.position.x - transform.position.x,
+                    player.transform.position.y - transform.position.y);
+            }
+            
             direction = Vector2.ClampMagnitude(direction, 1);
         }
 
@@ -88,9 +100,21 @@ namespace Journey
                 }
                 else
                 {
-                    isFollowingPlayer = false;
+                    //isFollowingPlayer = false;
+                    StartCoroutine(Wait());
                 }
             }
+        }
+
+        private void FollowingPlayer()
+        {
+            agent.SetDestination(player.transform.position);
+        }
+
+        private IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(timeWhenIsStillVisible);
+            isFollowingPlayer = false;
         }
     }
 }
