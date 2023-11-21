@@ -13,7 +13,12 @@ namespace Journey
             confirmationPanel.SetActive(false);
             endGamePanel.SetActive(false);
 
-            //подписка на собьтие вьзова confirmationPanel  = OpenConfirmationPanel();
+            Portal.OnCompletedLevel += OpenConfirmationPanel;
+        }
+
+        private void OnDestroy()
+        {
+            Portal.OnCompletedLevel -= OpenConfirmationPanel;
         }
 
         private void OpenConfirmationPanel()

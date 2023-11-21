@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Journey
 {
     public class InputControll : MonoBehaviour
     {
+        public static event UnityAction OnPressedInteractKey;
+
         [SerializeField] private Player player;
 
         private float verticalAxis;
@@ -32,6 +35,11 @@ namespace Journey
             if (Input.GetKeyDown(KeyCode.Space) == true)
             {
                 player.Fire();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) == true)
+            {
+                OnPressedInteractKey?.Invoke();
             }
         }
 
