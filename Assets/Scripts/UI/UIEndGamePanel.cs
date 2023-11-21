@@ -8,10 +8,17 @@ namespace Journey
         [SerializeField] private GameObject endGamePanel;
         [SerializeField] private GameObject nextButton;
 
+        private LevelList levelList;
+
         private void Start()
         {
+            LevelList levelList = GameObject.FindObjectOfType<LevelList>();
+
             confirmationPanel.SetActive(false);
             endGamePanel.SetActive(false);
+
+            if (SceneLoader.IsLastLevel(levelList))
+                nextButton.SetActive(false);
 
             Portal.OnCompletedLevel += OpenConfirmationPanel;
         }
@@ -39,17 +46,17 @@ namespace Journey
 
         public void NextButton()
         {
-            //вьзов след уровн9, елси он есть
+            SceneLoader.LoadNexLevel(levelList);
         }
 
         public void ReplayButton()
         {
-            //перезапуск уровн9
+            SceneLoader.Restart();
         }
 
         public void MenuButton()
         {
-            //открьтие меню
+            SceneLoader.LoadMainMenu();
         }
     }
 }

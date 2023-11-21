@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class LevelInfo : MonoBehaviour
+    [CreateAssetMenu]
+    public class LevelInfo : ScriptableObject
     {
         [SerializeField] private string levelName;
         [SerializeField] private string sceneName;
