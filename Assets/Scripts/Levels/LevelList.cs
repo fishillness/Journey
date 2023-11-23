@@ -4,9 +4,9 @@ namespace Journey
 {
     public class LevelList : MonoBehaviour
     {
-        [SerializeField] private LevelInfo[] levels;
+        [SerializeField] private LevelListInfo levelsList;
 
-        public LevelInfo[] Levels => levels;
+        public LevelListInfo LevelsList => levelsList;
     }
 }
 

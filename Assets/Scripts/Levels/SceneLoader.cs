@@ -27,7 +27,7 @@ namespace Journey
         {
             if (!IsLastLevel(levelList))
             {
-                SceneManager.LoadScene(levelList.Levels[LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) + 1].SceneName);
+                SceneManager.LoadScene(levelList.LevelsList.Levels[LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) + 1].SceneName);
             }
             else
                 Debug.Log("This is a last level");
@@ -35,7 +35,7 @@ namespace Journey
 
         public static bool IsLastLevel(LevelList levelList)
         {
-            return !(LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) < levelList.Levels.Length - 1);
+            return !(LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) < levelList.LevelsList.Levels.Length - 1);
         }
     }
 }

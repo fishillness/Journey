@@ -6,9 +6,9 @@ namespace Journey
     {   
         public static int DetermineLevelIndex(LevelList levelList, string sceneName)
         {
-            for (int i = 0; i < levelList.Levels.Length; i++)
+            for (int i = 0; i < levelList.LevelsList.Levels.Length; i++)
             {
-                if (levelList.Levels[i].SceneName == sceneName)
+                if (levelList.LevelsList.Levels[i].SceneName == sceneName)
                 {
                     return i;
                 }
