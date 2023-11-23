@@ -786,7 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confirmationPanel: {fileID: 7711136117906100153}
   endGamePanel: {fileID: 6816772375707286344}
-  nextButton: {fileID: 0}
+  nextButton: {fileID: 95735061409973187}
 --- !u!1 &3161654685010253663
 GameObject:
   m_ObjectHideFlags: 0
