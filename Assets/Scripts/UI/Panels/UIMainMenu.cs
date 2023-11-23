@@ -13,7 +13,6 @@ namespace Journey
         private void Start()
         {
             OpenPanel(MenuPanel);
-
         }
 
         public void MenuButton()

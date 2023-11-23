@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1516551403737138663}
   - component: {fileID: 6664537589852558190}
   - component: {fileID: 8709348231120732307}
+  - component: {fileID: 3562475910810353317}
   m_Layer: 5
   m_Name: LevelButton
   m_TagString: Untagged
@@ -121,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1516551403737138663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3562475910810353317}
+        m_TargetAssemblyTypeName: Journey.UILevelButton, Assembly-CSharp
+        m_MethodName: StartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8709348231120732307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +155,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3562475910810353317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845732757060803179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de651f5e7d95bd544a1aabf2104bfed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: {fileID: 165495376555717973}
+  levelInfo: {fileID: 0}
 --- !u!1 &4676160996981201399
 GameObject:
   m_ObjectHideFlags: 0
