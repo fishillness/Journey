@@ -3,15 +3,20 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class ItemTaker : TriggerColliderInteracted
+    public class ItemTaker : TriggerColliderInteracted, IScriptableObjectProperty
     {
         public static event UnityAction<string> OnTriedTakeItem;
 
         [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private ItemTakerInfo itemTakerInfo;
 
         [SerializeField] private ItemInfo item;
-        [SerializeField] private string warningText = "You need a key.";
-
+        [SerializeField] private string warningText;
+           
+        private void Awake()
+        {
+            ApplyProperty(itemTakerInfo);
+        }
 
         protected override void ActionUponInteraction()
         {
@@ -25,10 +30,19 @@ namespace Journey
             }
             else
             {
-                //вьвод сообщени9 о необходимости найти клю4
                 OnTriedTakeItem?.Invoke(warningText);
             }
         }
+        public void ApplyProperty(ScriptableObject property)
+        {
+            if (property == null) return;
 
+            if (property is ItemTakerInfo == false)
+                return;
+
+            itemTakerInfo = property as ItemTakerInfo;
+            item = itemTakerInfo.Item;
+            warningText = itemTakerInfo.WarningText;
+        }
     }
 }

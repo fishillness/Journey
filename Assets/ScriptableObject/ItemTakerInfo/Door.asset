@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c8a46433d3f7e49b74917d341c32c6, type: 3}
+  m_Name: Door
+  m_EditorClassIdentifier: 
+  nameObject: Door
+  item: {fileID: 11400000, guid: e5e79b721d0102947a5bfe5682518bd8, type: 2}
+  warningText: You need a key.

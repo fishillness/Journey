@@ -4380,7 +4380,6 @@ GameObject:
   - component: {fileID: 479335786466881666}
   - component: {fileID: 8231168787692160635}
   - component: {fileID: 8231168787692160636}
-  - component: {fileID: 8231168787692160637}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -4471,6 +4470,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1839035781808964109, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839035781808964109, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839035781808964109, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839035781808964109, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3624012187242526447, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
       propertyPath: m_Name
       value: GlobalSceneObject
@@ -4515,10 +4530,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8175232826427014504, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175232826427014504, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175232826427014504, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175232826427014504, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8818929242592092261, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2001678220}
+    - target: {fileID: 8848115773119917915, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848115773119917915, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848115773119917915, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848115773119917915, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4837,8 +4884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerEnter: 0
   inventoryManager: {fileID: 2001678220}
-  item: {fileID: 11400000, guid: e5e79b721d0102947a5bfe5682518bd8, type: 2}
-  warningText: You need a key.
+  itemTakerInfo: {fileID: 11400000, guid: 7dd3bb32c51007943a25b2b606ff66d4, type: 2}
 --- !u!58 &8231168787692160636
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4874,22 +4920,6 @@ CircleCollider2D:
   m_Offset: {x: 0.2, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8231168787692160637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4152914112749053998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443807bcb8486a64c9b1b4511c15cb08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerEnter: 0
-  inventoryManager: {fileID: 2001678220}
-  item: {fileID: 11400000, guid: e5e79b721d0102947a5bfe5682518bd8, type: 2}
-  warningText: You need a key.
 --- !u!1 &8288154863590849762
 GameObject:
   m_ObjectHideFlags: 0
