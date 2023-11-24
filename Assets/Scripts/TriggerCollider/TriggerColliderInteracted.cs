@@ -1,11 +1,8 @@
-using UnityEngine.Events;
 
 namespace Journey
 {
-    public class Portal : TriggerCollider
+    public class TriggerColliderInteracted : TriggerCollider
     {
-        public static event UnityAction OnCompletedLevel;
-
         private void Start()
         {
             InputControll.OnPressedInteractKey += OnPressedInteractKey;
@@ -20,8 +17,12 @@ namespace Journey
         {
             if (IsPlayerEnter)
             {
-                OnCompletedLevel?.Invoke();
+                ActionUponInteraction();
             }
         }
+
+        protected virtual void ActionUponInteraction() {}
     }
 }
+
+

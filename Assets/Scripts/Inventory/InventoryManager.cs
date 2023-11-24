@@ -55,5 +55,20 @@ namespace Journey
 
             OnUpdateInventory?.Invoke(itemInfos);
         }
+
+        public bool CheckItem(ItemInfo itemInfo)
+        {
+            if (!itemInfos.Contains(itemInfo))
+                return false;
+
+            for (int i = 0; i < itemInfos.Count - 1; i++)
+            {
+                if (itemInfos[i] == itemInfo)
+                    return true;
+            }
+
+            return false;
+        }
+
     }
 }
