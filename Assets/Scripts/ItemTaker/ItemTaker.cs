@@ -1,11 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Journey
 {
     public class ItemTaker : TriggerColliderInteracted
     {
-        [SerializeField] private ItemInfo item;
+        public static event UnityAction<string> OnTriedTakeItem;
+
         [SerializeField] private InventoryManager inventoryManager;
+
+        [SerializeField] private ItemInfo item;
+        [SerializeField] private string warningText = "You need a key.";
+
 
         protected override void ActionUponInteraction()
         {
@@ -20,6 +26,7 @@ namespace Journey
             else
             {
                 //вьвод сообщени9 о необходимости найти клю4
+                OnTriedTakeItem?.Invoke(warningText);
             }
         }
 
