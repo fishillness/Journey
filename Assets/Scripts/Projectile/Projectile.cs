@@ -1,19 +1,38 @@
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace Journey
 {
 
-    public class Projectile : MonoBehaviour
+    public class Projectile : MonoBehaviour, IScriptableObjectProperty
     {
+        [SerializeField] private ProjectileInfo projectileInfo;
+        
+        [Header("If there is no ProjectileInfo")]
         [SerializeField] private float speed;
         [SerializeField] private float lifeTime;
         [SerializeField] private int damage;
 
+        [SerializeField] private bool isPlaySoundAfterAppearance;
+        [SerializeField] private SoundType soundType;
+
         protected Destructible parent;
+        private SoundPlayer soundPlayer;
         private float Timer;
 
         private float stepLength;
         private Vector2 step;
+
+        private void Start()
+        {
+            soundPlayer = GameObject.FindObjectOfType<SoundPlayer>();
+
+            if (projectileInfo)
+                ApplyProperty(projectileInfo);
+
+            if (soundPlayer != null && isPlaySoundAfterAppearance == true)
+                soundPlayer.Play(soundType);
+        }
 
         private void Update()
         {
@@ -62,6 +81,21 @@ namespace Journey
         public void SetParent(Destructible parent)
         {
             this.parent = parent;
+        }
+
+        public void ApplyProperty(ScriptableObject property)
+        {
+            if (property == null) return;
+
+            if (property is ProjectileInfo == false)
+                return;
+
+            projectileInfo = property as ProjectileInfo;
+            speed = projectileInfo.Speed;
+            lifeTime = projectileInfo.LifeTime;
+            damage = projectileInfo.Damage;
+            isPlaySoundAfterAppearance = projectileInfo.IsPlaySoundAfterAppearance;
+            soundType = projectileInfo.SoundType;
         }
     }
 }

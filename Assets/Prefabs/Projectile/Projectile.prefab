@@ -151,6 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfccc5a16286a5f4c81f31e7ba51e3f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPlayer: {fileID: 0}
+  projectileInfo: {fileID: 11400000, guid: e85e538b3ff07914a8680140c126e0a5, type: 2}
   speed: 3
   lifeTime: 30
   damage: 1
+  isPlaySoundAfterAppearance: 0
+  soundType: 0
