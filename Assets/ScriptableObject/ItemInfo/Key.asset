@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22c9d886caf41a443adb2230510aceeb, type: 3}
-  m_Name: Item_001
+  m_Name: Key
   m_EditorClassIdentifier: 
-  nameItem: Che5t
-  id: 1
-  description: Che5t
-  icon: {fileID: 21300000, guid: 3d68bd7f0c1522d42a4c407a37e8e3c0, type: 3}
+  nameItem: Key
+  id: 2
+  description: Key
+  icon: {fileID: 21300000, guid: c80e59e775bc2284daff1e94d66b7f4e, type: 3}
   prefab: {fileID: 2261691053116992400, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}

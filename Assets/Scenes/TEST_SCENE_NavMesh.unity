@@ -2557,6 +2557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6716278256568023321, guid: 2a9dd8e01c9d8244da32bfcfc2cef695, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2956,6 +2960,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6716278256568023321, guid: 2a9dd8e01c9d8244da32bfcfc2cef695, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3204,7 +3212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1294507284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3390,6 +3398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 10
+  destInfo: {fileID: 0}
+  soundPlayer: {fileID: 0}
   speed: 2
   projectilePrefab: {fileID: 5967427329734151655, guid: 4fbe8491378bf384ea361b9f13537109, type: 3}
   refireTime: 0.1
@@ -3428,37 +3438,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!1 &1296612743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1296612744}
-  m_Layer: 0
-  m_Name: TEST
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1296612744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296612743}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359153252
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,6 +5512,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1240529441525902659, guid: fcf1ee2ba830278468afde57e68fe4e9, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
+    - target: {fileID: 1240529441525902659, guid: fcf1ee2ba830278468afde57e68fe4e9, type: 3}
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 2001678220}
@@ -5785,6 +5768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6716278256568023321, guid: 2a9dd8e01c9d8244da32bfcfc2cef695, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5949,7 +5936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2261691053116992400, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}
       propertyPath: m_Name
-      value: PickUp
+      value: Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6019,21 +6006,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2255364104484504789, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c80e59e775bc2284daff1e94d66b7f4e, type: 3}
-    - target: {fileID: 2574705614921621194, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2574705614921621194, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8326650707746551141, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
       propertyPath: m_Name
-      value: PickUp_002
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6093,5 +6068,4 @@ SceneRoots:
   - {fileID: 1503157684223261356}
   - {fileID: 1554667150}
   - {fileID: 326156324}
-  - {fileID: 1296612744}
   - {fileID: 1294507287}

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c8a46433d3f7e49b74917d341c32c6, type: 3}
-  m_Name: Door
+  m_Script: {fileID: 11500000, guid: 28ba0d3966a666645a0e7fe8392e5a1d, type: 3}
+  m_Name: Barrel
   m_EditorClassIdentifier: 
-  nameObject: Door
-  item: {fileID: 11400000, guid: e5e79b721d0102947a5bfe5682518bd8, type: 2}
-  warningText: You need a key.
-  isPlaySoundAfterRemoveItem: 1
-  soundType: 2
+  nameObject: Barrel
+  hitPoints: 1
+  isPlaySoundAfterDeath: 1
+  soundType: 3

@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 1
+  destInfo: {fileID: 11400000, guid: 78991b73cae67f143be0847cce24be58, type: 2}
+  soundPlayer: {fileID: 0}
 --- !u!1 &1252769584788707500
 GameObject:
   m_ObjectHideFlags: 0

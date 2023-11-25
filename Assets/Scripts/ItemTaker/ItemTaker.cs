@@ -8,14 +8,18 @@ namespace Journey
         public static event UnityAction<string> OnTriedTakeItem;
 
         [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private SoundPlayer soundPlayer;
         [SerializeField] private ItemTakerInfo itemTakerInfo;
 
-        [SerializeField] private ItemInfo item;
-        [SerializeField] private string warningText;
-           
+        private ItemInfo item;
+        private string warningText;
+        private bool isPlaySoundAfterRemoveItem;
+        private SoundType soundType;
+
         private void Awake()
         {
-            ApplyProperty(itemTakerInfo);
+            if (itemTakerInfo)
+                ApplyProperty(itemTakerInfo);
         }
 
         protected override void ActionUponInteraction()
@@ -25,7 +29,12 @@ namespace Journey
             if (isThereItem)
             {
                 inventoryManager.RemoveObject(item);
-                //пока 4то удаление двери, в будущем желательно анммаци9 с открьтием двери
+
+                if (soundPlayer != null && isPlaySoundAfterRemoveItem == true)
+                {
+                    soundPlayer.Play(soundType);
+                }
+
                 Destroy(gameObject);
             }
             else
@@ -43,6 +52,8 @@ namespace Journey
             itemTakerInfo = property as ItemTakerInfo;
             item = itemTakerInfo.Item;
             warningText = itemTakerInfo.WarningText;
+            isPlaySoundAfterRemoveItem = itemTakerInfo.IsPlaySoundAfterRemoveItem;
+            soundType = itemTakerInfo.SoundType;
         }
     }
 }
