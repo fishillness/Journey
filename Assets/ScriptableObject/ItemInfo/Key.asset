@@ -16,4 +16,6 @@ MonoBehaviour:
   id: 2
   description: Key
   icon: {fileID: 21300000, guid: c80e59e775bc2284daff1e94d66b7f4e, type: 3}
-  prefab: {fileID: 2261691053116992400, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}
+  prefab: {fileID: 8326650707746551141, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
+  isPlaySoundAfterPickedUp: 1
+  soundType: 1

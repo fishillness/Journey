@@ -17,3 +17,5 @@ MonoBehaviour:
   description: Chest
   icon: {fileID: 21300000, guid: 3d68bd7f0c1522d42a4c407a37e8e3c0, type: 3}
   prefab: {fileID: 2261691053116992400, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}
+  isPlaySoundAfterPickedUp: 1
+  soundType: 1

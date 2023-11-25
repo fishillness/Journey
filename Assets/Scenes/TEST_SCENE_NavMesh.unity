@@ -5934,6 +5934,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1653657305567044818, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
     - target: {fileID: 2261691053116992400, guid: 87f7ef2953ed82d4db69dc87245fd0df, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -6006,6 +6010,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2866542861314945602, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
+      propertyPath: soundPlayer
+      value: 
+      objectReference: {fileID: 1554667148}
     - target: {fileID: 8326650707746551141, guid: 55e80c03a4d34044fa5e449b8d9f727a, type: 3}
       propertyPath: m_Name
       value: Key

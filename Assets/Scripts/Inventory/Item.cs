@@ -8,6 +8,7 @@ namespace Journey
         public static event UnityAction<Item, ItemInfo> OnPickUp;
 
         [SerializeField] private ItemInfo itemInfo;
+        [SerializeField] private SoundPlayer soundPlayer;
 
         private Item item;
 
@@ -38,7 +39,14 @@ namespace Journey
         private void DestroyObject(Item item, ItemInfo itemInfo)
         {
             if (item == this.item && itemInfo == this.itemInfo)
+            {
+                if (soundPlayer != null && itemInfo.IsPlaySoundAfterPickedUp == true)
+                {
+                    soundPlayer.Play(itemInfo.SoundType);
+                }
+
                 Destroy(gameObject);
+            }
         }
     }
 }
