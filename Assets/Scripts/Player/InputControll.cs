@@ -6,6 +6,7 @@ namespace Journey
     public class InputControll : MonoBehaviour
     {
         public static event UnityAction OnPressedInteractKey;
+        public static event UnityAction OnPressedPause;
 
         [SerializeField] private Player player;
 
@@ -40,6 +41,11 @@ namespace Journey
             if (Input.GetKeyDown(KeyCode.E) == true)
             {
                 OnPressedInteractKey?.Invoke();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) == true)
+            {
+                OnPressedPause?.Invoke();
             }
         }
 

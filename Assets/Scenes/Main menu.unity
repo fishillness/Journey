@@ -5842,10 +5842,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalGameSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 3696644927261188061, guid: 3ae38cb7f82aaad4c840dc155188d320, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5829268457284085145, guid: 3ae38cb7f82aaad4c840dc155188d320, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9629953
