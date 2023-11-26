@@ -7,9 +7,15 @@ namespace Journey
     {
         [SerializeField] private Text levelName;
         [SerializeField] private LevelInfo levelInfo;
+        [SerializeField] private GameObject block;
+
+        private Button button;
+
+        public LevelInfo LevelInfo => levelInfo;
 
         private void Start()
         {
+            button = GetComponent<Button>();
             ApplyProperty(levelInfo);
         }
 
@@ -27,6 +33,18 @@ namespace Journey
 
             levelInfo = property as LevelInfo;
             levelName.text = levelInfo.LevelName;
+        }
+
+        public void SetInteractable()
+        {
+            block.SetActive(false);
+            button.interactable = true;
+        }
+
+        public void SetNonInteractable()
+        {
+            block.SetActive(true);
+            button.interactable = false;  
         }
     }
 }

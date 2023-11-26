@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Journey
 {
@@ -27,7 +26,7 @@ namespace Journey
         {
             if (!IsLastLevel(levelList))
             {
-                SceneManager.LoadScene(levelList.LevelsList.Levels[LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) + 1].SceneName);
+                SceneManager.LoadScene(levelList.LevelsListInfo.Levels[LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) + 1].SceneName);
             }
             else
                 Debug.Log("This is a last level");
@@ -35,7 +34,12 @@ namespace Journey
 
         public static bool IsLastLevel(LevelList levelList)
         {
-            return !(LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) < levelList.LevelsList.Levels.Length - 1);
+            return !(LevelUtil.DetermineLevelIndex(levelList, SceneManager.GetActiveScene().name) < levelList.LevelsListInfo.Levels.Length - 1);
+        }
+
+        public static string GetActiveScene()
+        {
+            return SceneManager.GetActiveScene().name;
         }
     }
 }

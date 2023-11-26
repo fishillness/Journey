@@ -8,7 +8,7 @@ namespace Journey
         [SerializeField] private GameObject endGamePanel;
         [SerializeField] private GameObject nextButton;
 
-        private LevelList levelList;
+        [SerializeField] private LevelList levelList;
 
         private void Start()
         {
@@ -35,6 +35,11 @@ namespace Journey
 
         public void YesButton()
         {
+            LevelInfo levelInfo = LevelUtil.GetLevelInfoBySceneName(levelList, SceneLoader.GetActiveScene());
+            //Debug.Log(levelInfo.LevelName);
+            
+            //Saves.SaveInt(levelInfo.LevelName, 1);
+
             confirmationPanel.SetActive(false);
             endGamePanel.SetActive(true);
         }
