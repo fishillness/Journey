@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Sound Volume
   audioMixer: {fileID: 24100000, guid: 4c472413609a60144b62e505d46bdcd8, type: 2}
-  nameParameter: SFX
+  nameParameter: SFX Volume
   minRealValue: -80
   maxRealValue: 0
   virtualStep: 10
