@@ -9,6 +9,7 @@ namespace Journey
         [SerializeField] private Setting setting;
         [SerializeField] private Text titleText;
         [SerializeField] private Text valueText;
+
         [SerializeField] private Image previousImage;
         [SerializeField] private Image nextImage;
 

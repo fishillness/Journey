@@ -23,6 +23,10 @@ namespace Journey
         public override bool IsMinValue { get => currentValue == minRealValue; }
         public override bool IsMaxValue { get => currentValue == maxRealValue; }
 
+        public float VirtualStep => virtualStep;
+        public float MinVirtualValue => minVirtualValue;
+        public float MaxVirtualValue => maxVirtualValue;
+
         public override void SetNextValue()
         {
             AddValue(Mathf.Abs(maxRealValue - minRealValue) / virtualStep);
@@ -48,6 +52,11 @@ namespace Journey
         {
             audioMixer.SetFloat(nameParameter, currentValue);
             Save();
+        }
+
+        public void SetValue(float value)
+        {
+            currentValue = minRealValue - (minRealValue * value) / 100;
         }
 
         private void AddValue(float value)
