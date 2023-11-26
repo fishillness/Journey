@@ -19,21 +19,17 @@ namespace Journey
 
         public static float FindSavedPlayerRecordTimeByLevel(string levelName)
         {
-            return Saves.LoadFloat(levelName, 0);
+            return Saves.LoadInt(levelName, 0);
         }
 
         public static LevelInfo GetLevelInfoBySceneName(LevelList levelList, string sceneName)
         {
-            Debug.Log(levelList);
-            /*
             for (int i = 0; i < levelList.LevelsListInfo.Levels.Length; i++)
             {
-                Debug.Log($"levelList.LevelsListInfo.Levels[{i}].SceneName = {levelList.LevelsListInfo.Levels[i].SceneName}");
-                
                 if (levelList.LevelsListInfo.Levels[i].SceneName == sceneName)
                     return levelList.LevelsListInfo.Levels[i];
                 
-            }*/
+            }
             return null;
         }
     }

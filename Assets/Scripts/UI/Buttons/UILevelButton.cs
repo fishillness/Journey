@@ -8,14 +8,13 @@ namespace Journey
         [SerializeField] private Text levelName;
         [SerializeField] private LevelInfo levelInfo;
         [SerializeField] private GameObject block;
-
-        private Button button;
+        [SerializeField] private Button button;
 
         public LevelInfo LevelInfo => levelInfo;
 
         private void Start()
         {
-            button = GetComponent<Button>();
+            //button = GetComponent<Button>();
             ApplyProperty(levelInfo);
         }
 

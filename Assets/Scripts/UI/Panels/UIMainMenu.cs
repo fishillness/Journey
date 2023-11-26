@@ -4,35 +4,55 @@ namespace Journey
 {
     public class UIMainMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject MenuPanel;
-        [SerializeField] private GameObject LevelsPanel;
-        [SerializeField] private GameObject SettingsPanel;
-        [SerializeField] private GameObject ControlPanel;
+        [SerializeField] private GameObject menuPanel;
+        [SerializeField] private GameObject levelsPanel;
+        [SerializeField] private GameObject settingsPanel;
+        [SerializeField] private GameObject controlPanel;
+        [SerializeField] private GameObject confirmationPanel;
+
+        private LevelList levelList;
 
 
         private void Start()
         {
-            OpenPanel(MenuPanel);
+            levelList = GameObject.FindAnyObjectByType<LevelList>();
+            OpenPanel(menuPanel);
+            confirmationPanel.SetActive(false);
         }
 
         public void MenuButton()
         {
-            OpenPanel(MenuPanel);
+            OpenPanel(menuPanel);
         }
 
-        public void LevelsButton()
+        public void NewGameButton()
         {
-            OpenPanel(LevelsPanel);
+            confirmationPanel.SetActive(true);
+        }
+
+        public void OkButton()
+        {
+            Saves.DeleteInfoAboutLevels(levelList.LevelsListInfo);
+            confirmationPanel.SetActive(false);
+        }
+        public void CancelButton()
+        {
+            confirmationPanel.SetActive(false);
+        }
+
+        public void ContinueButton()
+        {
+            OpenPanel(levelsPanel);
         }
 
         public void SettingsButton()
         {
-            OpenPanel(SettingsPanel);
+            OpenPanel(settingsPanel);
         }
 
         public void ControlButton()
         {
-            OpenPanel(ControlPanel);
+            OpenPanel(controlPanel);
         }
 
         public void QuitButton()
@@ -42,10 +62,10 @@ namespace Journey
 
         private void OpenPanel(GameObject panel)
         {
-            MenuPanel.SetActive(false);
-            LevelsPanel.SetActive(false);
-            SettingsPanel.SetActive(false);
-            ControlPanel.SetActive(false);
+            menuPanel.SetActive(false);
+            levelsPanel.SetActive(false);
+            settingsPanel.SetActive(false);
+            controlPanel.SetActive(false);
 
             panel.SetActive(true);
         }
