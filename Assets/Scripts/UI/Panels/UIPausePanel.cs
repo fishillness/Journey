@@ -5,6 +5,7 @@ namespace Journey
     public class UIPausePanel : MonoBehaviour
     {
         [SerializeField] private GameObject pausePanel;
+        [SerializeField] private UIInstructionPanel instructionPanel;
         [SerializeField] private Pauser pauser;
 
         private void Start()
@@ -30,6 +31,11 @@ namespace Journey
         {
             pauser.UnPause();
             SceneLoader.Restart();
+        }
+
+        public void InstractionButton()
+        {
+            instructionPanel.OpenPanel();
         }
 
         public void MenuButton()
