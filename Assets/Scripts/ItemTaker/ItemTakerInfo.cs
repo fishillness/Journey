@@ -11,6 +11,9 @@ namespace Journey
         [Header("Sound")]
         [SerializeField] private bool isPlaySoundAfterRemoveItem;
         [SerializeField] private SoundType soundType;
+        [Header("For nps")]
+        [SerializeField] private Item exchangeItemPrefab;
+        [SerializeField] private ItemInfo exchangeItemInfo;
 
         public string Name => nameObject;
         public ItemInfo Item => item;
@@ -19,5 +22,7 @@ namespace Journey
         //Sound
         public bool IsPlaySoundAfterRemoveItem => isPlaySoundAfterRemoveItem;
         public SoundType SoundType => soundType;
+        public Item ExchangeItemPrefab => exchangeItemPrefab;
+        public ItemInfo ExchangeItemInfo => exchangeItemInfo;
     }
 }

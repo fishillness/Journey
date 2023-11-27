@@ -7,14 +7,14 @@ namespace Journey
     {
         public static event UnityAction<string> OnTriedTakeItem;
 
-        [SerializeField] private InventoryManager inventoryManager;
-        [SerializeField] private SoundPlayer soundPlayer;
-        [SerializeField] private ItemTakerInfo itemTakerInfo;
+        [SerializeField] protected InventoryManager inventoryManager;
+        [SerializeField] protected SoundPlayer soundPlayer;
+        [SerializeField] protected ItemTakerInfo itemTakerInfo;
 
-        private ItemInfo item;
+        protected ItemInfo item;
         private string warningText;
-        private bool isPlaySoundAfterRemoveItem;
-        private SoundType soundType;
+        protected bool isPlaySoundAfterRemoveItem;
+        protected SoundType soundType;
 
         private void Awake()
         {
