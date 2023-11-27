@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level_002
   m_EditorClassIdentifier: 
   levelName: Level 2
-  sceneName: TEST_SCENE
+  sceneName: TEST_SCENE_NavMesh
