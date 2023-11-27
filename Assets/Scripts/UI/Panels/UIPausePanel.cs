@@ -27,6 +27,12 @@ namespace Journey
                 pausePanel.SetActive(false);
         }
 
+        public void ContinueButton()
+        {
+            pauser.UnPause();
+            pausePanel.SetActive(false);
+        }
+
         public void ReplayButton()
         {
             pauser.UnPause();
