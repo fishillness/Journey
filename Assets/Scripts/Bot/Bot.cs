@@ -100,7 +100,6 @@ namespace Journey
                 }
                 else
                 {
-                    //isFollowingPlayer = false;
                     StartCoroutine(Wait());
                 }
             }
