@@ -10,14 +10,20 @@ namespace Journey
         [SerializeField] private GameObject controlPanel;
         [SerializeField] private GameObject confirmationPanel;
 
+        [SerializeField] private GameObject continueButton;
+
         private LevelList levelList;
 
+        private bool isThereSaves;
 
         private void Start()
         {
             levelList = GameObject.FindAnyObjectByType<LevelList>();
             OpenPanel(menuPanel);
             confirmationPanel.SetActive(false);
+
+            isThereSaves = (LevelUtil.FindSavedByLevel("Level 1") != 0);
+            continueButton.SetActive(isThereSaves);
         }
 
         public void MenuButton()
@@ -27,13 +33,21 @@ namespace Journey
 
         public void NewGameButton()
         {
-            confirmationPanel.SetActive(true);
+            if (isThereSaves)
+            {
+                confirmationPanel.SetActive(true);
+            }
+            else
+            {
+                OpenPanel(levelsPanel);
+            }
         }
 
         public void OkButton()
         {
             Saves.DeleteInfoAboutLevels(levelList.LevelsListInfo);
             confirmationPanel.SetActive(false);
+            OpenPanel(levelsPanel);
         }
         public void CancelButton()
         {
@@ -69,7 +83,6 @@ namespace Journey
 
             panel.SetActive(true);
         }
-
     }
 }
 

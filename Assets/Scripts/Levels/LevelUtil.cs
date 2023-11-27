@@ -17,7 +17,7 @@ namespace Journey
             return -1;
         }
 
-        public static float FindSavedPlayerRecordTimeByLevel(string levelName)
+        public static float FindSavedByLevel(string levelName)
         {
             return Saves.LoadInt(levelName, 0);
         }

@@ -3560,6 +3560,7 @@ MonoBehaviour:
   settingsPanel: {fileID: 1501666255}
   controlPanel: {fileID: 921724311}
   confirmationPanel: {fileID: 4943874930988197136}
+  continueButton: {fileID: 5925548854142781352}
 --- !u!114 &1892291457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4185328010061428129, guid: 3ae38cb7f82aaad4c840dc155188d320, type: 3}
@@ -5214,8 +5215,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2006511565}
   - {fileID: 95471225657476604}
+  - {fileID: 2006511565}
   - {fileID: 963633857}
   - {fileID: 1987229864}
   m_Father: {fileID: 425036552}

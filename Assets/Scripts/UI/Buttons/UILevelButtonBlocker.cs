@@ -19,7 +19,7 @@ namespace Journey
 
             for (int i = 1; i < buttons.Length; i++)
             {
-                if (LevelUtil.FindSavedPlayerRecordTimeByLevel(buttons[i - 1].LevelInfo.LevelName) == 0)
+                if (LevelUtil.FindSavedByLevel(buttons[i - 1].LevelInfo.LevelName) == 0)
                 {
                     buttons[i].SetNonInteractable();
                 }
