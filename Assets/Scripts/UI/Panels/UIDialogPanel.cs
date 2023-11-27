@@ -10,6 +10,9 @@ namespace Journey
         [SerializeField] private GameObject dialogPanel;
         [SerializeField] private GameObject itemButton;
 
+        private bool isItemTaked;
+
+
         private void Start()
         {
             dialogPanel.SetActive(false);
@@ -23,6 +26,8 @@ namespace Journey
 
         private void DialogStart(ItemInfo itemInfo, bool isThereItem)
         {
+            if (isItemTaked) return;
+
             dialogPanel.SetActive(true);
 
             if (isThereItem)
@@ -38,6 +43,7 @@ namespace Journey
         public void ItemButton()
         {
             OnTakeItem?.Invoke();
+            isItemTaked = true;
             dialogPanel.SetActive(false);
         }
 
