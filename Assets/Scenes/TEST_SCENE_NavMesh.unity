@@ -4318,6 +4318,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2813149383331466396, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813149383331466396, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813149383331466396, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813149383331466396, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2985280773864216991, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4338,6 +4354,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalSceneObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5050470826893682352, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050470826893682352, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050470826893682352, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050470826893682352, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5655870884124749344, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4351,6 +4383,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5655870884124749344, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286003990734060873, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286003990734060873, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286003990734060873, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286003990734060873, guid: f5028442a2f37eb4abcecc9a7989dc15, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -4870,7 +4918,7 @@ GameObject:
   - component: {fileID: 6584785090485040200}
   - component: {fileID: 7386916495674882700}
   m_Layer: 0
-  m_Name: NPS
+  m_Name: "NP\u0421"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

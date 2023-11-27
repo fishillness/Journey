@@ -4,7 +4,7 @@ namespace Journey
 {
     public class TriggerColliderInteracted : TriggerCollider
     {
-        private void Start()
+        protected virtual void Start()
         {
             InputControll.OnPressedInteractKey += OnPressedInteractKey;
         }

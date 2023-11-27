@@ -3,12 +3,13 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class NPS : ItemTaker
+    public class NPÑ : ItemTaker
     {
         public static event UnityAction<ItemInfo, bool> OnInteracted;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             UIDialogPanel.OnTakeItem += TakeItem;
         }
 
@@ -19,8 +20,6 @@ namespace Journey
 
         protected override void ActionUponInteraction()
         {
-            Debug.Log("NPS  Pressed E");
-
             bool isThereItem = inventoryManager.CheckItem(item);
             OnInteracted?.Invoke(item, isThereItem);
         }

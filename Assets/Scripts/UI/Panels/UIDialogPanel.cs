@@ -13,12 +13,12 @@ namespace Journey
         private void Start()
         {
             dialogPanel.SetActive(false);
-            NPS.OnInteracted += DialogStart;
+            NPÑ.OnInteracted += DialogStart;
         }
 
         private void OnDestroy()
         {
-            NPS.OnInteracted -= DialogStart;
+            NPÑ.OnInteracted -= DialogStart;
         }
 
         private void DialogStart(ItemInfo itemInfo, bool isThereItem)
