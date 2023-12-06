@@ -15,6 +15,7 @@ namespace Journey
         private void Awake()
         {
             zPosition = transform.position.z;
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zPosition);
         }
 
         private void Update()
