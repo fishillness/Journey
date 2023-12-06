@@ -52,7 +52,8 @@ namespace Journey
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLength);
             if (hit)
             {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+                //Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+                Destructible dest = hit.collider.transform.GetComponentInParent<Destructible>();
 
                 if (dest != parent)
                 {
