@@ -3,11 +3,15 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class Portal : TriggerColliderInteracted
+    public class Portal : TriggerColliderInteracted, IDependency<SoundPlayer>
     {
         public static event UnityAction OnCompletedLevel;
-        [SerializeField] private SoundPlayer soundPlayer;
+
         [SerializeField] private SoundType soundType;
+
+        private SoundPlayer soundPlayer;
+
+        public void Construct(SoundPlayer obj) => soundPlayer = obj;
 
         protected override void ActionUponInteraction()
         {

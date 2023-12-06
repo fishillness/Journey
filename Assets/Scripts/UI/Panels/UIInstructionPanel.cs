@@ -2,10 +2,12 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class UIInstructionPanel : MonoBehaviour
+    public class UIInstructionPanel : MonoBehaviour, IDependency<LevelList>
     {
         [SerializeField] private GameObject instructionPanel;
-        [SerializeField] private LevelList levelList;
+
+        private LevelList levelList;
+        public void Construct(LevelList obj) => levelList = obj;
 
         private void Start()
         {

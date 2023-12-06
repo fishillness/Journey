@@ -8,6 +8,8 @@ namespace Journey
         [SerializeField] private InputControll inputControll;
         [SerializeField] private CameraFollow cameraFollow;
         [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private MusicPlayer musicPlayer;
 
         private void Awake()
         {
@@ -20,6 +22,8 @@ namespace Journey
             Bind<InputControll>(inputControll, monoBehaviourInScene);
             Bind<CameraFollow>(cameraFollow, monoBehaviourInScene);
             Bind<InventoryManager>(inventoryManager, monoBehaviourInScene);
+            Bind<SoundPlayer>(soundPlayer, monoBehaviourInScene);
+            Bind<MusicPlayer>(musicPlayer, monoBehaviourInScene);
         }
     }
 }

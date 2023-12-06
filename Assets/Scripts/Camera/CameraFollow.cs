@@ -2,13 +2,15 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class CameraFollow : MonoBehaviour
+    public class CameraFollow : MonoBehaviour, IDependency<Player>
     {
-        [SerializeField] private Transform player;
         [SerializeField] private float speed;
 
+        private Player player;
         private Vector3 target;
         private float zPosition;
+
+        public void Construct(Player obj) => player = obj;
 
         private void Awake()
         {

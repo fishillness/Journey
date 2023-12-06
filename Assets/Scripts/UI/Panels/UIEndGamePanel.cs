@@ -2,12 +2,15 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class UIEndGamePanel : MonoBehaviour
+    public class UIEndGamePanel : MonoBehaviour, IDependency<LevelList>
     {
         [SerializeField] private GameObject confirmationPanel;
         [SerializeField] private GameObject endGamePanel;
         [SerializeField] private GameObject nextButton;
-        [SerializeField] private LevelList levelList;
+
+        private LevelList levelList;
+
+        public void Construct(LevelList obj) => levelList = obj;
 
         private void Start()
         {

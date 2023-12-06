@@ -3,19 +3,21 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class Destructible : MonoBehaviour, IScriptableObjectProperty
+    public class Destructible : MonoBehaviour, IScriptableObjectProperty, IDependency<SoundPlayer>
     {
         public event UnityAction OnDeath;
 
         [SerializeField] private int hitPoints;
         [SerializeField] private DestructibleInfo destInfo;
-        [SerializeField] private SoundPlayer soundPlayer;
 
+        private SoundPlayer soundPlayer;
         private int currentHitPoints;
         private bool isPlaySoundAfterDeath;
         private SoundType soundType;
 
         public int HitPoints => currentHitPoints;
+
+        public void Construct(SoundPlayer obj) => soundPlayer = obj;
 
         protected virtual void Start()
         {

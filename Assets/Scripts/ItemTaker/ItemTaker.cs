@@ -3,18 +3,22 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class ItemTaker : TriggerColliderInteracted, IScriptableObjectProperty
+    public class ItemTaker : TriggerColliderInteracted, IScriptableObjectProperty,
+        IDependency<InventoryManager>, IDependency<SoundPlayer>
     {
         public static event UnityAction<string> OnTriedTakeItem;
 
-        [SerializeField] protected InventoryManager inventoryManager;
-        [SerializeField] protected SoundPlayer soundPlayer;
         [SerializeField] protected ItemTakerInfo itemTakerInfo;
 
+        protected InventoryManager inventoryManager;
+        protected SoundPlayer soundPlayer;
         protected ItemInfo item;
         private string warningText;
         protected bool isPlaySoundAfterRemoveItem;
         protected SoundType soundType;
+
+        public void Construct(InventoryManager obj) => inventoryManager = obj;
+        public void Construct(SoundPlayer obj) => soundPlayer = obj;
 
         private void Awake()
         {

@@ -5,7 +5,6 @@ namespace Journey
 {
     public class UIInventoryManager : MonoBehaviour
     {
-        [SerializeField] private InventoryManager inventory;
         [SerializeField] private List<UIItem> items;
 
         private void Start()

@@ -401,7 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400091a200dde0643a029c0e3491d9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8120362973350755590}
   speed: 1
 --- !u!1 &696548768620284403
 GameObject:
@@ -699,7 +698,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 10
   destInfo: {fileID: 0}
-  soundPlayer: {fileID: 0}
   speed: 2
   projectilePrefab: {fileID: 5967427329734151655, guid: 4fbe8491378bf384ea361b9f13537109, type: 3}
   refireTime: 0.1
@@ -751,6 +749,8 @@ MonoBehaviour:
   inputControll: {fileID: 587492450616321590}
   cameraFollow: {fileID: 4691897387041787519}
   inventoryManager: {fileID: 2029689402289832350}
+  soundPlayer: {fileID: 8471225980458582396}
+  musicPlayer: {fileID: 858634441299539478}
 --- !u!1 &1123455504931552145
 GameObject:
   m_ObjectHideFlags: 0

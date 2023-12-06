@@ -3,17 +3,18 @@ using UnityEngine.Events;
 
 namespace Journey
 {
-    public class Item : MonoBehaviour
+    public class Item : MonoBehaviour, IDependency<SoundPlayer>
     {
         public static event UnityAction<Item, ItemInfo> OnPickUp;
 
         [SerializeField] private ItemInfo itemInfo;
-        [SerializeField] private SoundPlayer soundPlayer;
 
+        private SoundPlayer soundPlayer;
         private Item item;
 
         public ItemInfo ItemInfo => itemInfo;
 
+        public void Construct(SoundPlayer obj) => soundPlayer = obj;
 
         private void Start()
         {

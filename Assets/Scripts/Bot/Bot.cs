@@ -4,20 +4,21 @@ using UnityEngine.AI;
 
 namespace Journey
 {
-    public class Bot : Creature
+    public class Bot : Creature, IDependency<Player>
     {
-        [SerializeField] private Player player;
         [SerializeField] private Transform[] patrolPoint;
         [SerializeField] private float timeWhenIsStillVisible = 5;
         //[SerializeField] private float visibilityDistance = 1.5f;
 
+        private Player player;
         private NavMeshAgent agent;
         private BotTriggerCollider triggerCollider;
         private int currentPatrolPointIndex;
         [Header("DEBUG")]
         [SerializeField] private bool isFollowingPlayer = false;
-
         private float deviationDistanceToPoint = 0.1f;
+
+        public void Construct(Player obj) => player = obj;
 
         protected override void Start()
         {

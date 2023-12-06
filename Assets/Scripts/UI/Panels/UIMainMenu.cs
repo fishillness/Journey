@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Journey
 {
-    public class UIMainMenu : MonoBehaviour
+    public class UIMainMenu : MonoBehaviour, IDependency<LevelList>
     {
         [SerializeField] private GameObject menuPanel;
         [SerializeField] private GameObject levelsPanel;
@@ -15,10 +15,11 @@ namespace Journey
         private LevelList levelList;
 
         private bool isThereSaves;
+        public void Construct(LevelList obj) => levelList = obj;
 
         private void Start()
         {
-            levelList = GameObject.FindAnyObjectByType<LevelList>();
+            //levelList = GameObject.FindAnyObjectByType<LevelList>();
             OpenPanel(menuPanel);
             confirmationPanel.SetActive(false);
 
